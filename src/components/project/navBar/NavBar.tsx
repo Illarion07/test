@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 // http://localhost:3000"
-const host = "https://next-landing-page-web.onrender.com/"
+const host = "https://test-two-chi-95.vercel.app/"
 
 const Navbar = async () => {
   return (

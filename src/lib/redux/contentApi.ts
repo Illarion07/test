@@ -4,12 +4,12 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 
 
 // http://localhost:3000"
-const host = "https://next-landing-page-web.onrender.com/"
+const host = "https://test-two-chi-95.vercel.app/"
 
 export const contentApi = createApi({
     reducerPath: 'contentApi',
     tagTypes: ['Content'],
-    baseQuery: fetchBaseQuery({ baseUrl: `${host}/api/` }),
+    baseQuery: fetchBaseQuery({ baseUrl: `${host}api/` }),
     endpoints: (build) => ({
         getContent: build.query({
             query: () => `project`,
