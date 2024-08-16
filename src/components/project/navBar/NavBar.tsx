@@ -7,7 +7,7 @@ import { useGetContentQuery } from "@/lib/redux";
 
 // "http://localhost:3000"
 // "https://test-two-chi-95.vercel.app/"
-const host = "http://localhost:3000" 
+const host = "https://test-two-chi-95.vercel.app/" 
 
 // шапка сайта
 
