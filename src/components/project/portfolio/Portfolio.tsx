@@ -25,7 +25,7 @@ const Portfolio: React.FC<Props> = ({ portfolio }) => {
               <div key={id} className="max-w-[340px] max-h-[200px] relative">
                <Link
                   href="/#"
-                  className="w-full h-auto flex items-center justify-center"
+                  className="w-full h-full flex items-center justify-center"
                 >
                   <Image
                     className="w-full h-auto object-cover"

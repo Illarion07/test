@@ -247,6 +247,7 @@ body {
     padding-right: 60px;
   }
   .works {
+    display: grid;
     grid-template-columns: repeat(2, minmax(100px, 340px));
   }
 }
