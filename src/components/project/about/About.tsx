@@ -19,12 +19,12 @@ const About: React.FC<Props> = ({ about }) => {
           INFORMATION ABOUT
         </h2>
         <div className="flex flex-col w-full h-full items-start justify-center text-left px-[10%] sm:px-[15%]">
-          <h3 className="font[600px] leading-[168%] tracking-[0.13em] uppercase text-[12px]  mb-2 sm:text-[22px] sm:mb-[20px] md:text-[30px]">
+          <h3 className="font[600px] leading-[168%] tracking-[0.13em] uppercase text-[12px] mb-2 sm:text-[22px] sm:mb-[18px] md:text-[22px] lg:text-[30px]">
             {about.content[0].value}
           </h3>
           <div className="flex flex-col lg:flex-row w-full h-auto items-center justify-between">
             <div className="flex flex-row items-end justify-between">
-              <p className="block font-[400] text-[10px] leading-[159%] tracking-[159%] w-full h-auto mr-6 mb-8 sm:text-[12px]  lg:max-w-[267px] lg:mb-0 lg:text-[15px]">
+              <p className="block font-[400] text-[10px] leading-[159%] tracking-[159%] w-full h-auto mr-6 mb-8 sm:text-[12px] lg:max-w-[320px] lg:mb-0 lg:text-[15px]">
                 {about.content[1].value}
               </p>
             </div>
@@ -39,7 +39,7 @@ const About: React.FC<Props> = ({ about }) => {
                   priority 
                 />
               </div>
-              <div className="absolute w-[200px] h-[120px] md:w-[340px] md:h-[200px] z-20 left-[10px] top-[15px] sm:left-[30px] sm:top-[30px]">
+              <div className="absolute w-[200px] h-[120px] md:w-[340px] md:h-[200px] z-20 left-[10px] top-[15px] sm:left-[60px] sm:top-[30px]">
                 <Image
                   className="w-full h-full "
                   src={about.images[1].url || ""}
