@@ -13,9 +13,11 @@ interface Props {
   page: string;
 }
 
+// отображение секций photoSlider\textContent\gallery\images\services
+
 const Sections: React.FC<Props> = ({ data, page, sectionId }) => {
   return (
-    <div className="w-full mb-20 first:mt-0">
+    <div className="w-full mb-10 first:mt-0">
       <h4 className=" text-[28px] font-bold ">Секция {sectionId + 1}</h4>
 
       {data.photoSlider && (

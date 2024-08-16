@@ -5,10 +5,12 @@ interface Props {
   main: ISection;
 }
 
+// главная
+
 const Main: React.FC<Props> = ({ main }) => {
   if (main.content)
     return (
-      <div className="flex text-white w-full h-screen bg-cover bg-no-repeat bg-center bg-[url('/bg-vector.svg')] items-center justify-center px-[10%] sm:px-[14%] lg:px-[18%]">
+      <section className="flex text-white w-full h-screen bg-cover bg-no-repeat bg-center bg-[url('/bg-vector.svg')] items-center justify-center px-[10%] sm:px-[14%] lg:px-[18%]">
         <div className="w-full h-auto text-left relative flex flex-col items-start justify-start">
           <p className="w-[100%] max-w-[600px] text-xs sm:text-base">{main.content[0].value}</p>
           <h1 className=" font-light font-['Potra'] leading-[109%] tracking-[0.015em] uppercase text-[36px] sm:text-[74px] lg:text-[100px]">
@@ -32,7 +34,7 @@ const Main: React.FC<Props> = ({ main }) => {
             </svg>
           </button>
         </div>
-      </div>
+      </section>
     );
 };
 

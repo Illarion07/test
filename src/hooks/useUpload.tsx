@@ -16,7 +16,7 @@ interface Props {
 }
 
 
-export const Upload = ({...props}: Props) => {
+export const useUpload = ({...props}: Props) => {
     const [addPicture] = useAddPictureMutation();
     const [updatePicture] = useUpdatePictureMutation();
     const [updateService] = useUpdateServiceMutation();

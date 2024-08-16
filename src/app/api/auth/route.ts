@@ -5,6 +5,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 // import { redirect } from 'next/navigation' почему не работает?
 
+// здесь все api касательно регистрации\логинизации пользователя
 
 export async function POST(req: NextRequest,) {
     const request = await req.json();

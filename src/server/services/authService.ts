@@ -1,15 +1,13 @@
 "use server"
 
-import * as uuid from "uuid";
 import * as jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-import AdminDto, { IAdminDto } from "../dtos/admin-dto";
+import AdminDto from "../dtos/admin-dto";
 import { Admin } from "../models/admin-model";
 import { connectToDb } from "..";
-import { findToken, generateTokens, saveToken, validateRefreshToken } from "./tokenService";
-import { Token } from "../models/token-model";
-import { IAdmin } from "@/types";
+import { generateTokens, saveToken } from "./tokenService";
 
+// здесь вся логика касательно регистрации\логинизации\проверки
 
 export const registration = async (data: { email: string, password: string, securePass: string }) => {
     connectToDb();
@@ -76,28 +74,5 @@ export const checkMe = async (refreshToken: string) => {
     }
     catch (error) {
         return false
-    }
-}
-
-export const refresh = async (refreshToken: string) => {
-    if (!refreshToken) {
-        return false
-    }
-
-    const userData: any = validateRefreshToken(refreshToken);
-    const tokenFromDb = await findToken(refreshToken);
-
-    if (!userData || !tokenFromDb) {
-        return false
-    }
-
-    const user = await Admin.findById(userData.id)
-    const userDto = new AdminDto(user);
-    const tokens = await generateTokens({ ...userDto });
-    await saveToken(userDto.id, tokens.refreshToken);
-
-    return {
-        ...tokens,
-        user: userDto
     }
 }

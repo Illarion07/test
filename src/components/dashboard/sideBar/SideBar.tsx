@@ -5,6 +5,8 @@ import arrow from "../../../../public/dashboard/svg/arrow_prev.svg";
 import Image from "next/image";
 import Link from "next/link";
 
+//сайдбар с навигацией
+
 const SideBar = () => {
   const [active, setActive] = React.useState<boolean>(false);
 

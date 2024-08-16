@@ -5,7 +5,7 @@ import { Project } from "../models/project-model";
 import { IService, IUserInfo } from "@/types";
 import { connectToDb } from "..";
 
-
+// всяя логика по получеию\обновлению\удалению контента
 
 export const getProject = async () => {
     connectToDb();
@@ -73,7 +73,6 @@ export const destroyPicture = async (oldPubId: string) => {
 
     try {
         const destroy = await cloudinary.v2.uploader.destroy(oldPubId);
-        console.log(destroy, "destroy");
     } catch (error) {
         console.error(error);
     }
@@ -96,7 +95,6 @@ export const deletePhotoAtIndex = async (res: { page: string, sectionId: number,
             { new: true, useFindAndModify: false }
         );
 
-        // Step 2: Pull the null value from the array
         await project.updateOne(
             { $pull: { [`${page}.${sectionId}.${content}`]: null } }, 
             { new: true, useFindAndModify: false }

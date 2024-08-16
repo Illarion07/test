@@ -1,13 +1,15 @@
 "use client";
 
 import Sections from "@/components/dashboard/sections/sections";
-import useTokenValidation from "@/hooks/check";
+import useTokenValidation from "@/hooks/useTokenValidation";
 import { useGetContentQuery } from "@/lib/redux";
 import { ISection } from "@/types";
 import React from "react";
 
+//здесь мапятся все секции main страницы в админ панель
 
 const ContentPage = () => {
+  // проверяем валидность токенов и их наличие
   useTokenValidation();
   
   const { data = [], isLoading } = useGetContentQuery(undefined);

@@ -1,4 +1,3 @@
-import { Action } from '@reduxjs/toolkit';
 
 export interface ISection {
   photoSlider?: IPicture[] | null;
@@ -28,7 +27,7 @@ export interface ICloudinary {
       secure_url: string;
       access_mode: string;
       original_filename: string;
-      [key: string]: any; // for any additional properties
+      [key: string]: any; 
   },
   status: number;
 }

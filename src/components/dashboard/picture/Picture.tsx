@@ -4,9 +4,9 @@ import React from "react";
 import Image from "next/image";
 import empty from "../../../../public/dashboard/png/empty-photo.png";
 import Delete from "../../../../public/dashboard/svg/delete.svg";
-import { Upload } from "../../../hooks/Upload";
 import { IPicture } from "@/types";
 import { useDeletePictureMutation } from "@/lib/redux";
+import { useUpload } from "@/hooks/useUpload";
 
 interface Props {
   item: IPicture;
@@ -15,6 +15,8 @@ interface Props {
   contentId: string;
   sectionId: string;
 }
+
+// отображение картинок gallery\images и их удаление
 
 const Picture: React.FC<Props> = ({
   item,
@@ -26,7 +28,7 @@ const Picture: React.FC<Props> = ({
   const [deletePicture] = useDeletePictureMutation();
 
   const filePicker = React.useRef<HTMLInputElement>(null);
-  const { upload } = Upload({
+  const { upload } = useUpload({
     filePicker,
     page,
     sectionId,
@@ -36,7 +38,7 @@ const Picture: React.FC<Props> = ({
   });
 
   return (
-    <article className="photo w-[240px] h-[240px] cursor-pointer ">
+    <div className="photo w-full max-h-[280px] sm:max-w-[240px] sm:h-[240px] cursor-pointer ">
       <Image
         className="trashcan w-[30px] h-auto top-1 right-1 transition-all"
         src={Delete}
@@ -72,7 +74,7 @@ const Picture: React.FC<Props> = ({
         height={240}
         priority
       />
-    </article>
+    </div>
   );
 };
 

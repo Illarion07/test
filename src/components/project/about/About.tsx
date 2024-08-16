@@ -6,10 +6,12 @@ interface Props {
   about: ISection;
 }
 
+// секция About
+
 const About: React.FC<Props> = ({ about }) => {
   if (about.content && about.images)
     return (
-      <div
+      <section
         className="mx-12 pr-16 text-white flex w-full h-screen relative border-l-[1px] sm:mx-16"
         id="about"
       >
@@ -53,7 +55,7 @@ const About: React.FC<Props> = ({ about }) => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     );
 };
 

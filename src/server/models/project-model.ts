@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 
+// модель описывающая типы полей секций в БД
+
 const contentSchema = new mongoose.Schema({
     value: { type: String },
     type: { type: String },
@@ -59,6 +61,8 @@ const ProjectSchema = new mongoose.Schema(
                 ]
             },
         },
+
+        // указываю какие ключи присутствую в секциях
         main: {
             type: [sectionSchema], default: [
                 {

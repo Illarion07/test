@@ -11,6 +11,8 @@ interface FormData {
   massage: { value: string };
 }
 
+// секция Contacts
+
 const Contacts:React.FC<Props> = ({user}) => {
   const formHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -20,7 +22,7 @@ const Contacts:React.FC<Props> = ({user}) => {
   
   if(user.userInfo)
   return (
-    <div className="mx-12 pr-16 text-white flex w-full h-screen justify-center items-center relative border-l-[1px] sm:mx-16" id="contacts">
+    <section className="mx-12 pr-16 text-white flex w-full h-screen justify-center items-center relative border-l-[1px] sm:mx-16" id="contacts">
       <h2 className="text-[20px] font-[800] leading[109%] tracking-[0.13em] uppercase rotate-[270deg] absolute top-[72%] left-[-95px] sm:left-[-72px] sm:text-[30px]">
         Contacts
       </h2>
@@ -249,7 +251,7 @@ const Contacts:React.FC<Props> = ({user}) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

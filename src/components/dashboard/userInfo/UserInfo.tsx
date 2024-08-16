@@ -5,8 +5,7 @@ import empty from "../../../../public/dashboard/png/empty-avatar.png";
 import Image from "next/image";
 import { UerInfoList } from "./UerInfoList";
 import { IProject, IUserInfo } from "@/types";
-import { useGetContentQuery, useUpdateUserPhotoMutation } from "@/lib/redux";
-import { Upload } from "@/hooks/Upload";
+import { useUpdateUserPhotoMutation } from "@/lib/redux";
 import axios from "axios";
 
 interface Props {
@@ -17,6 +16,7 @@ const UserInfo: React.FC<Props> = ({ data }) => {
   const [updateUserPhoto] = useUpdateUserPhotoMutation();
   const filePicker = React.useRef<HTMLInputElement>(null);
 
+  // метод обновления фото пользователя
   const updatePhoto = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const target = e.target as HTMLInputElement;
     if (target.files) {
@@ -41,6 +41,7 @@ const UserInfo: React.FC<Props> = ({ data }) => {
     }
   };
 
+  // выбираем картинку
   const handlePick = () => {
     if (filePicker.current) filePicker.current.click();
   };

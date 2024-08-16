@@ -6,10 +6,12 @@ interface Props {
   prices: ISection;
 }
 
+// секция услуг
+
 const Services: React.FC<Props> = ({ prices }) => {
   if (prices.services)
     return (
-      <div
+      <section
         className="mx-12   pr-16 text-white flex w-full h-screen justify-center items-center relative border-l-[1px] sm:mx-16"
         id="price"
       >
@@ -49,7 +51,7 @@ const Services: React.FC<Props> = ({ prices }) => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     );
 };
 

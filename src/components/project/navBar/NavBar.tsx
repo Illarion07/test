@@ -9,13 +9,15 @@ import { useGetContentQuery } from "@/lib/redux";
 // "https://test-two-chi-95.vercel.app/"
 const host = "http://localhost:3000" 
 
+// шапка сайта
+
 const Navbar = () => {
   const { data = [], isLoading } = useGetContentQuery(undefined);
 
   if (isLoading) return <h1>Loading...</h1>
 
   return (
-    <div className="flex items-center justify-between bg-transparent w-full h-auto mt-8 fixed px-[10%] z-50">
+    <header className="flex items-center justify-between bg-transparent w-full h-auto mt-8 fixed px-[10%] z-50">
       <a href={host}>
         <Image className="w-auto h-auto" src={"/logo.png"} alt="logo" width={130} height={80} priority/>
       </a>
@@ -42,7 +44,7 @@ const Navbar = () => {
           <span className="absolute w-[100px] h-full rotate-[270deg] right-[-24px] top-[60px]">{`Start a project`}</span>
         </button>
       </div>
-    </div>
+    </header>
   );
 };
 

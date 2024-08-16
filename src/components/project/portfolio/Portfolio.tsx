@@ -7,10 +7,12 @@ interface Props {
   portfolio: ISection;
 }
 
+// секция картинок\галерея
+
 const Portfolio: React.FC<Props> = ({ portfolio }) => {
   if (portfolio.gallery)
     return (
-      <div
+      <section
         className="mx-12 pr-16 text-white flex w-full h-screen justify-center items-center relative border-l-[1px] sm:mx-16"
         id="works"
       >
@@ -37,7 +39,7 @@ const Portfolio: React.FC<Props> = ({ portfolio }) => {
             ))}
           </div>
         </div>
-      </div>
+      </section>
     );
 };
 

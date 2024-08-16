@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// модель описывающая типы полей админа в БД
 
 const AdminSchema = new mongoose.Schema(
   {

@@ -15,6 +15,8 @@ interface Props {
   contentId: string;
 }
 
+// здесь логика редактирования любых текстовых title\desc значений
+
 const ContentList: React.FC<Props> = ({ item, page, sectionId, contentId }) => {
   const [updateText] = useUpdateTextMutation();
   const [text, setText] = React.useState(item.value);

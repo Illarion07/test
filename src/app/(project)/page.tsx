@@ -16,11 +16,14 @@ import { useGetContentQuery } from "@/lib/redux";
 import Services from "@/components/project/services/Services";
 
 
+//здесь мапятся все данные из main страницы и прокидываются по компонентам
+
 export default function Home() {
   const { data = [], isLoading } = useGetContentQuery(undefined);
   
-  
   if (isLoading) return <h1>Loading...</h1>
+
+  // использовал Swiper для постраничного скрола, но он почему-то не хочет скролить по колесу мыши
 
     return (
       <Swiper

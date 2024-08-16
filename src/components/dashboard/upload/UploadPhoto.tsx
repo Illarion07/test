@@ -1,7 +1,7 @@
 import React from "react";
 import add from "../../../../public/dashboard/svg/add.svg";
 import Image from "next/image";
-import { Upload } from "@/hooks/Upload";
+import { useUpload } from "@/hooks/useUpload";
 
 
 interface Props {
@@ -10,9 +10,11 @@ interface Props {
     page: string;
 }
 
+// загрузка любых картинок на сервис cloudinary 
+
 export const UploadPhoto:React.FC<Props> = ({content, sectionId, page}) => {
     const filePicker = React.useRef<HTMLInputElement>(null);
-    const { upload } = Upload({ filePicker, content, sectionId, page, opiration: "add" });
+    const { upload } = useUpload({ filePicker, content, sectionId, page, opiration: "add" });
 
     return (
         <article className="w-[240px] h-[240px]">

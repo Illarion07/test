@@ -4,7 +4,8 @@ import React from "react";
 import Buttons from "../buttons/Buttons";
 import { UploadPhoto } from "../upload/UploadPhoto";
 import { useUpdateServiceMutation } from "@/lib/redux";
-import { Upload } from "@/hooks/Upload";
+import { useUpload } from "@/hooks/useUpload";
+
 
 interface Props {
   item: IService;
@@ -13,6 +14,8 @@ interface Props {
   contentId: string;
   page: string;
 }
+
+//отображение услуг и логика по обновлению 
 
 const Service: React.FC<Props> = ({
   item,
@@ -27,7 +30,7 @@ const Service: React.FC<Props> = ({
   const [price, setPrice] = React.useState<string>(item.price);
 
   const filePicker = React.useRef<HTMLInputElement>(null);
-  const { upload } = Upload({
+  const { upload } = useUpload({
     filePicker,
     page,
     sectionId,
@@ -49,7 +52,7 @@ const Service: React.FC<Props> = ({
   };
 
   return (
-    <div className="flex flex-col w-240px h-auto">
+    <div className="flex flex-col w-full sm:w-[240px] h-auto">
       <div className="mb-10">
         {item.url === "" ? (
           <UploadPhoto
@@ -69,7 +72,7 @@ const Service: React.FC<Props> = ({
               accept="image/*,.png,.jpg,.web"
             />
             <Image
-              className="cursor-pointer w-auto h-auto"
+              className="cursor-pointer w-full h-auto"
               src={item.url}
               alt="picture"
               width={240}

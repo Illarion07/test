@@ -10,6 +10,8 @@ interface Props {
     pastValue: string;
 }
 
+// всплывающие кнопки сохранения и сброса при изменении инпута
+
 const Buttons:React.FC<Props> = ({saveData, returneData, newValue, pastValue}) => {
   return (
     <>

@@ -11,6 +11,8 @@ interface Props {
   item: IUserInfo;
 }
 
+// информация о пользователе (имя, номер, почта и.т.д)
+
 export const UerInfoList: React.FC<Props> = ({ item }) => {
   const [userValue, setUserValue] = React.useState<IUserInfo>(item);
   const [updateUser] = useUpdateUserMutation();

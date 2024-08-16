@@ -4,6 +4,7 @@ import { getProject, updatePhoto, addPicture, deletePhotoAtIndex, updateText, up
 import { IProject } from '@/types';
 import { NextRequest, NextResponse } from 'next/server';
 
+// здесь все api касательно редактирования контента
 
 export async function GET() {
   try {
