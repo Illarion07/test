@@ -1,24 +1,30 @@
+"use client"
+
 import React from "react";
-import Navigate from "../navigate/Navigate";
 import Image from "next/image";
 import Link from "next/link";
+import { useGetContentQuery } from "@/lib/redux";
 
-// http://localhost:3000"
-const host = "https://test-two-chi-95.vercel.app/"
+// "http://localhost:3000"
+// "https://test-two-chi-95.vercel.app/"
+const host = "http://localhost:3000" 
 
-const Navbar = async () => {
+const Navbar = () => {
+  const { data = [], isLoading } = useGetContentQuery(undefined);
+
+  if (isLoading) return <h1>Loading...</h1>
+
   return (
-    <div className="flex items-center justify-between bg-transparent w-full h-auto mt-8 fixed px-[120px] z-50">
+    <div className="flex items-center justify-between bg-transparent w-full h-auto mt-8 fixed px-[10%] z-50">
       <a href={host}>
         <Image className="w-auto h-auto" src={"/logo.png"} alt="logo" width={130} height={80} priority/>
       </a>
-      {/* <Navigate /> */}
       <div className="flex flex-row w-[280px] h-auto justify-between items-center">
-        <Link href="/login">
+        <Link href="/login" className=" size-[24px] sm:size-[30px]">
           <Image src={"/user.svg"} alt="logo" width={30} height={30} />
         </Link>
-        <a className="phone" href="tel:+1(674)-563-9114">
-          +1(674)-563-9114
+        <a className="phone text-[12px] sm:text-[18px]" href={`tel:${data.user.userInfo[3].value}`}>
+          {data.user.userInfo[3].value}
         </a>
         <button className="flex relative top-3 start w-10 h-10 text-white">
           <svg

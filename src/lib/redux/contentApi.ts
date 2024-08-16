@@ -3,8 +3,9 @@ import { IAddPicture, IDeletePicture, IUpdatePicture, IUpdateService, IUpdateTex
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 
 
-// http://localhost:3000"
-const host = "https://test-two-chi-95.vercel.app/"
+// "http://localhost:3000"
+// "https://test-two-chi-95.vercel.app/"
+const host = "http://localhost:3000/"
 
 export const contentApi = createApi({
     reducerPath: 'contentApi',

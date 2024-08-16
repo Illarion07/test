@@ -8,21 +8,19 @@ interface Props {
 const Main: React.FC<Props> = ({ main }) => {
   if (main.content)
     return (
-      <div className="flex text-white w-full h-screen bg-cover bg-no-repeat bg-center bg-[url('/bg-vector.svg')] items-center justify-center px-[18%]">
+      <div className="flex text-white w-full h-screen bg-cover bg-no-repeat bg-center bg-[url('/bg-vector.svg')] items-center justify-center px-[10%] sm:px-[14%] lg:px-[18%]">
         <div className="w-full h-auto text-left relative flex flex-col items-start justify-start">
-          <p className="w-[100%] max-w-[600px]">{main.content[0].value}</p>
-          <h1 className="text-[100px] font-light font-['Potra'] leading-[109%] tracking-[0.015em] uppercase">
+          <p className="w-[100%] max-w-[600px] text-xs sm:text-base">{main.content[0].value}</p>
+          <h1 className=" font-light font-['Potra'] leading-[109%] tracking-[0.015em] uppercase text-[36px] sm:text-[74px] lg:text-[100px]">
             {main.content[1].value}
             <span className="font-sans font-black block">
               {main.content[2].value}
             </span>
           </h1>
-          <button className="size-[160px] rounded-[100%] bg-[#fb1b3d] absolute left-0 bottom-[-120px] shadow_circle">
-            <span className="relative w-full">Consultation</span>
+          <button className="size-[120px] sm:size-[160px] rounded-[100%] bg-[#fb1b3d] absolute left-0 bottom-[-120px] shadow_circle">
+            <span className="relative w-full text-sm sm:text-[16px]">Consultation</span>
             <svg
-              className="absolute w-full left-0 ring-0"
-              width="99"
-              height="9"
+              className="absolute w-[90px] h-[9px] left-[16px] sm:w-[160px] sm:left-0 sm:right-0 "
               viewBox="0 0 99 9"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

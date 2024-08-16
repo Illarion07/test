@@ -10,16 +10,16 @@ import "swiper/css/scrollbar";
 
 import Main from "@/components/project/main/Main";
 import About from "@/components/project/about/About";
-import Price from "@/components/project/price/price";
 import Contacts from "@/components/project/contacts/Contacts";
 import Portfolio from "@/components/project/portfolio/Portfolio";
 import { useGetContentQuery } from "@/lib/redux";
+import Services from "@/components/project/services/Services";
 
 
 export default function Home() {
   const { data = [], isLoading } = useGetContentQuery(undefined);
-
-
+  
+  
   if (isLoading) return <h1>Loading...</h1>
 
     return (
@@ -40,7 +40,7 @@ export default function Home() {
           <Portfolio portfolio={data.main[2]} />
         </SwiperSlide>
         <SwiperSlide>
-          <Price prices={data.main[3]} />
+          <Services prices={data.main[3]} />
         </SwiperSlide>
         <SwiperSlide>
           <Contacts user={data.user} />

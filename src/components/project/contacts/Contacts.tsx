@@ -15,35 +15,36 @@ const Contacts:React.FC<Props> = ({user}) => {
   const formHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { name, email, massage } = e.target as typeof e.target & FormData;
+    console.log(name, email, massage);
   };
   
   if(user.userInfo)
   return (
-    <div className="mx-16 pr-16 text-white flex w-full h-screen justify-center items-center relative border-l-[1px]" id="contacts">
-      <h2 className="text-[30px] font-[800] leading[109%] tracking-[0.13em] uppercase rotate-[270deg] absolute top-[72%] left-[-72px]">
+    <div className="mx-12 pr-16 text-white flex w-full h-screen justify-center items-center relative border-l-[1px] sm:mx-16" id="contacts">
+      <h2 className="text-[20px] font-[800] leading[109%] tracking-[0.13em] uppercase rotate-[270deg] absolute top-[72%] left-[-95px] sm:left-[-72px] sm:text-[30px]">
         Contacts
       </h2>
-      <div className="flex flex-col w-full h-auto items-star justify-around px-[15%]">
+      <div className="flex flex-col w-full h-auto items-star justify-around px-[10%] sm:px-[15%]">
         <div className="mb-10">
-          <h1 className="text-left">Contact us</h1>
-          <p className="text-left">Let’s get to the nex level together</p>
+          <h1 className="text-left text-sm sm:text-[18px]">Contact us</h1>
+          <p className="text-left text-[10px] sm:text-[14px]">Let’s get to the nex level together</p>
         </div>
 
         <div className="w-full h-full flex justify-between items-center">
-          <div className="flex flex-row mr-5">
+          <div className="flex flex-row mr-5 w-full h-auto lg:max-w-[350px] ">
             <form
-              className="flex flex-col items-start w-[350px] h-auto"
+              className="flex flex-col items-start min-w-full h-auto"
               onSubmit={(e) => formHandler(e)}
             >
               <div className="mb-5 border-2 w-full h-auto relative">
                 <label
-                  className=" absolute left-6 top-[-10px] font-[500] text-[15px] leading-[109%] tracking-[0.1em] bg-black px-4"
+                  className=" absolute left-6 top-[-10px] font-[500] leading-[109%] tracking-[0.1em] bg-black px-4 text-[10px] sm:text-[15px]"
                   htmlFor="name"
                 >
                   Full name
                 </label>
                 <input
-                  className="bg-transparent w-full h-[43px]"
+                  className="bg-transparent w-full h-[43px] text-[14px]"
                   id="name"
                   name="name"
                   placeholder="Enter your first name"
@@ -52,13 +53,13 @@ const Contacts:React.FC<Props> = ({user}) => {
               </div>
               <div className="mb-5 border-2 w-full h-auto relative">
                 <label
-                  className=" absolute left-6 top-[-10px] font-[500] text-[15px] leading-[109%] tracking-[0.1em] bg-black px-4"
+                  className="absolute left-6 top-[-10px] font-[500] leading-[109%] tracking-[0.1em] bg-black px-4 text-[10px] sm:text-[15px]"
                   htmlFor="email"
                 >
                   Email
                 </label>
                 <input
-                  className="bg-transparent w-full h-[43px]"
+                  className="bg-transparent w-full h-[43px] text-[14px]"
                   id="email"
                   name="email"
                   placeholder="Enter your email"
@@ -67,13 +68,13 @@ const Contacts:React.FC<Props> = ({user}) => {
               </div>
               <div className="mb-5 border-2 w-full h-auto relative">
                 <label
-                  className=" absolute left-6 top-[-10px] font-[500] text-[15px] leading-[109%] tracking-[0.1em] bg-black px-4"
+                  className=" absolute left-6 top-[-10px] font-[500] leading-[109%] tracking-[0.1em] bg-black px-4 text-[10px] sm:text-[15px]"
                   htmlFor="massage"
                 >
                   How can we help?
                 </label>
                 <textarea
-                  className="bg-transparent resize-none w-full h-[85px] mt-[10px]"
+                  className="bg-transparent resize-none w-full h-[85px] mt-[10px] text-[14px]"
                   id="massage"
                   name="massage"
                   placeholder="Your massage"
@@ -87,20 +88,20 @@ const Contacts:React.FC<Props> = ({user}) => {
               </button>
             </form>
           </div>
-          <div className="flex flex-col text-left max-w-[370px]">
+          <div className="assets">
             <div className="flex flex-col">
               <div className="mb-[15px] font-[400] text-[16px] leading-[132%]">
-                <a href="tel:">{user.userInfo[4].value}</a>
+                <a className="text-[14px]" href="tel:">{user.userInfo[4].value}</a>
               </div>
               <div className="mb-[15px] font-[400] text-[16px] leading-[132%]">
-                <a href="mailto:">{user.userInfo[2].value}</a>
+                <a className="text-[14px]" href="mailto:">{user.userInfo[2].value}</a>
               </div>
               <div className="mb-[15px] font-[400] text-[16px] leading-[132%]">
-                <p>{user.userInfo[5].value}</p>
+                <p className="text-[14px]">{user.userInfo[5].value}</p>
               </div>
             </div>
-            <div className="grid grid-cols-2 grid-rows-2 gap-5  w-[374px] h-auto">
-              <div className="w-[165px] h-[103px] bg-black border-2 flex items-start justify-center flex-col p-[15px]">
+            <div className="grid grid-cols-2 grid-rows-2 gap-4">
+              <div className="w-full h-[103px] bg-black border-2 flex items-start justify-center flex-col p-[15px]">
                 <p className="font-[600] text-[12px] leading-[132%]">
                   BECOME A CLIENT
                 </p>
@@ -120,7 +121,7 @@ const Contacts:React.FC<Props> = ({user}) => {
                   />
                 </svg>
               </div>
-              <div className="w-[165px] h-[103px]flex flex flex-col items-start justify-center p-[15px]">
+              <div className="w-full h-[103px]flex flex flex-col items-start justify-center p-[15px]">
                 <h5 className="mb-[15px] font-[500] text-[15px] leading-[109%] tracking-[0.1em] uppercase">
                   Follow us
                 </h5>
@@ -204,7 +205,7 @@ const Contacts:React.FC<Props> = ({user}) => {
                   </svg>
                 </div>
               </div>
-              <div className="w-[165px] h-[103px] bg-white text-black border-2 flex items-start justify-center flex-col p-[15px]">
+              <div className="w-full h-[103px] bg-white text-black border-2 flex items-start justify-center flex-col p-[15px]">
                 <p className="font-[600] text-[12px] leading-[132%]">
                   BECOME A CLIENT
                 </p>
@@ -224,7 +225,7 @@ const Contacts:React.FC<Props> = ({user}) => {
                   />
                 </svg>
               </div>
-              <div className="w-[165px] h-[103px] bg-black border-2 flex items-start justify-center flex-col p-[15px]">
+              <div className="w-full h-[103px] bg-black border-2 flex items-start justify-center flex-col p-[15px]">
                 <p className="font-[600] text-[12px] leading-[132%]">
                   BECOME A CLIENT
                 </p>
